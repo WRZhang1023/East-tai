@@ -1,0 +1,31 @@
+
+############################
+学习spring boot 与其它框架集成
+############################
+	Q：contorller 找不到
+	A：应该将main函数所在的报名放在controller类所在包的上层，在启动的时候会扫描下面的所有的包
+	Q：如果需要扫描其它jar包中的controller呢？
+	A：使用ComponentScan   @ComponentScan(basePackages={"ind.other.jar"})
+############################
+	Q：@RestController和@Controller 异同点
+	A：@RestController修饰的方法返回字符串，会将字符串打印到页面，而@Controller会去查找视图，如果没有会报错
+############################
+	Q：几个常用的注解
+	A：@PropertySource(ignoreResourceNotFound=true,value="classpath:properties/application.properties")
+	   @ConfigurationProperties(prefix="db1",locations="classpath:db.properties")  
+	   @ComponentScan(basePackages = { "com.beebank" })
+       @ImportResource("classpath:springmvc-servlet.xml")
+
+############################
+	Q：当application.ymx和 application.properties都在的时候  那个生效？
+	A：不知道。。。。。
+	
+	Q：我们自己定义的properties怎样读取到配置中？
+	A：
+
+
+############################
+	Q:@EnableConfigurationProperties({CustomProperties3.class}) 作用
+	A：@EnableConfigurationProperties能够使得ConfigurationProperties配置的对象实例化，和@component功能类似，两个都能进行示例化对象，如果同时使用会报错
+	
+############################
